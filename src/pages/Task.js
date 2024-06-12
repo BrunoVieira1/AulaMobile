@@ -32,7 +32,12 @@ export default function Task({ navigation }) {
         data={task} renderItem={({ item }) => {
           return (
             <View style={styles.taskc}>
-              <Text style={styles.text2}>
+              <Text style={styles.text2} onPress={() => {
+                navigation.navigate('Details', {
+                  id: item.id,
+                  description: item.description
+                })
+              }}>
                 {item.description}
               </Text>
               <Pressable style={styles.button1} onPress={() => {
